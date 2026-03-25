@@ -1333,15 +1333,15 @@ class PrinterExtruder:
                         toolhead.manual_move([None, cur_extruder.y_idle_position, None], cur_extruder.fast_move_speed)
                         # gcmd.respond_info("G0 Y{} F{}".format(cur_extruder.y_idle_position, cur_extruder.fast_move_speed*60))
 
-                        toolhead.manual_move([x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, None, None], cur_extruder.fast_move_speed)
-                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, cur_extruder.fast_move_speed*60))
-                        toolhead.manual_move([x_move_position, None, None], cur_extruder.fast_move_speed)
-                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position,cur_extruder.fast_move_speed*60))
+                        toolhead.manual_move([x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, None, None], cur_extruder.slow_move_speed)
+                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, cur_extruder.slow_move_speed*60))
+                        toolhead.manual_move([x_move_position, None, None], cur_extruder.slow_move_speed)
+                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position,cur_extruder.slow_move_speed*60))
                     else:
-                        toolhead.manual_move([x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, None, None], cur_extruder.fast_move_speed)
-                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, cur_extruder.fast_move_speed*60))
-                        toolhead.manual_move([x_move_position, None, None], cur_extruder.fast_move_speed)
-                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position, cur_extruder.fast_move_speed*60))
+                        toolhead.manual_move([x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, None, None], cur_extruder.slow_move_speed)
+                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position + [1, -1][cur_extruder.grab_dir]*0.5, cur_extruder.slow_move_speed*60))
+                        toolhead.manual_move([x_move_position, None, None], cur_extruder.slow_move_speed)
+                        # gcmd.respond_info("G0 X{} F{}".format(x_move_position, cur_extruder.slow_move_speed*60))
 
                         toolhead.manual_move([None, cur_extruder.y_idle_position, None], cur_extruder.fast_move_speed)
                         # gcmd.respond_info("G0 Y{} F{}".format(cur_extruder.y_idle_position, cur_extruder.fast_move_speed*60))
@@ -1352,8 +1352,8 @@ class PrinterExtruder:
                     toolhead.manual_move([None, cur_extruder.xy_park_position[1], None], cur_extruder.slow_move_speed)
                     # gcmd.respond_info("G0 Y{} F{}".format(cur_extruder.xy_park_position[1], cur_extruder.slow_move_speed*60))
 
-                    toolhead.manual_move([cur_extruder.xy_park_position[0], None, None], cur_extruder.slow_move_speed)
-                    # gcmd.respond_info("G0 X{} F{}".format(cur_extruder.xy_park_position[0], cur_extruder.slow_move_speed*60))
+                    toolhead.manual_move([cur_extruder.xy_park_position[0], None, None], cur_extruder.grab_speed)
+                    # gcmd.respond_info("G0 X{} F{}".format(cur_extruder.xy_park_position[0], cur_extruder.grab_speed*60))
 
                     toolhead.manual_move([None, cur_extruder.y_idle_position, None], cur_extruder.fast_move_speed)
                     # gcmd.respond_info("G0 Y{} F{}".format(cur_extruder.y_idle_position, cur_extruder.fast_move_speed*60))
